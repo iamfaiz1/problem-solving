@@ -1,7 +1,9 @@
 class ProductOfNumbers:
+# 1352. Product of the Last K Numbers
+# look we dont actually need to store all numbers, just the product
 
     def __init__(self):
-        self.arr = []
+        # self.arr = []
         self.prevProd = [1]
 
     def add(self, num: int) -> None:
@@ -10,7 +12,7 @@ class ProductOfNumbers:
             self.prevProd=[1]
         else:
             self.prevProd.append(num*val)
-        self.arr.append(num)
+        # self.arr.append(num)
 
     def getProduct(self, k: int) -> int:
         # this is to handle 0 input case
