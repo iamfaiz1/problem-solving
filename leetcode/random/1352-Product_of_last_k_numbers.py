@@ -13,8 +13,11 @@ class ProductOfNumbers:
         self.arr.append(num)
 
     def getProduct(self, k: int) -> int:
+        # this is to handle 0 input case
+        # we adjusted the prefix product array to [1] in case of zero
         if len(self.prevProd) <= k:
             return 0
+        
         return self.prevProd[-1]//self.prevProd[-k-1]
 
 
