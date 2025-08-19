@@ -17,5 +17,6 @@ class Main{
         
         System.out.println("enter number of terms: ");
         System.out.println(sn.mySum(sc.nextInt()));
+        sc.close();
     }
 }
