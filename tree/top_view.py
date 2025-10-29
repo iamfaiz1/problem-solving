@@ -1,4 +1,5 @@
 '''
+GFG
 class Node:
     def __init__(self, val):
         self.data = val
@@ -34,3 +35,44 @@ class Solution:
         for hd in range(mind, maxd+1):
             res.append(top[hd])
         return res
+
+
+# ___________________________________________________________________________
+
+# bottom view problem using same approach: GFG
+'''
+class Node:
+    def __init__(self, val):
+        self.data = val
+        self.right = None
+        self.left = None
+'''
+
+class Solution:
+    def bottomView(self, root):
+        from collections import deque, defaultdict
+        # code here
+        def bottom(root):
+            if not root:
+                return
+            
+            q = deque()
+            q.append((root, 0))
+            di = defaultdict(int)
+            
+            while(q):
+                node, distance = q.popleft()
+                di[distance] = node.data
+                
+                if node.left:
+                    q.append((node.left, distance-1))
+                if node.right:
+                    q.append((node.right, distance+1))
+            
+            ans = []
+            for d in sorted(di.keys()):
+                ans.append(di[d])
+            return ans
+        return bottom(root)
+        
+        
