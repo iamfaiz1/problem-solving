@@ -17,7 +17,6 @@ class Solution:
             while busy and busy[0][0] <= s:
                 _, k = heapq.heappop(busy)
                 heapq.heappush(free, k)
-
     
              # if room available
             if free:
