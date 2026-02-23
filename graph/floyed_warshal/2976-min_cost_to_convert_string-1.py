@@ -1,5 +1,7 @@
+from typing import List
 class Solution:
     def minimumCost(self, source: str, target: str, original: List[str], changed: List[str], cost: List[int]) -> int:
+        
         inf = float('inf')
         graph = [[inf]*26 for _ in range(26)]
         for i in range(26):
